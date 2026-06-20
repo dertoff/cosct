@@ -9,7 +9,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const CTA_URL = "https://giftclick.org/aff_c?offer_id=4258&aff_id=158143";
 
-const CostcoLogo = () => (
+const BrandLogo = () => (
   <div className="flex flex-col items-center justify-center select-none py-2 shrink-0">
     <div className="relative inline-flex flex-col">
       <div className="relative pr-1">
@@ -76,7 +76,7 @@ export default function App() {
       <div className="hidden sm:flex min-h-screen flex-col items-center justify-center p-8 text-center bg-brand-bone">
         <div className="max-w-md bg-white p-10 rounded-3xl shadow-sm border border-black/5">
           <div className="mb-6 flex justify-center">
-            <CostcoLogo />
+            <BrandLogo />
           </div>
           <h2 className="text-[24px] font-black text-brand-primary mb-4 tracking-tight uppercase">Mobile Exclusive</h2>
           <p className="text-[16px] text-black/70 font-medium">
@@ -95,7 +95,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
           >
-            <CostcoLogo />
+            <BrandLogo />
           </motion.div>
         </header>
 
@@ -124,7 +124,7 @@ export default function App() {
             href={CTA_URL}
             className="w-full flex items-center justify-center gap-2 bg-brand-primary text-white py-5 rounded-2xl font-black text-[22px] shadow-[0_12px_25px_rgba(227,24,55,0.25)] transition-all hover:bg-[#CC1531] hover:-translate-y-0.5 active:scale-[0.98] outline-none uppercase tracking-wide"
             id="cta-button"
-            aria-label="Start Now to get your Costco discount code"
+            aria-label="Start Now to get your discount code"
           >
             Start Now <ArrowRight className="w-6 h-6" aria-hidden="true" />
           </a>
