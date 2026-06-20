@@ -14,7 +14,7 @@ const BrandLogo = () => (
     <div className="relative inline-flex flex-col">
       <div className="relative pr-1">
         <div className="text-[54px] sm:text-[60px] font-black tracking-[-0.04em] text-brand-primary uppercase leading-none" style={{ fontFamily: "Impact, sans-serif", transform: "skewX(-14deg) scaleX(1.15)" }}>
-          COSTCO
+          <span style={{ unicodeBidi: 'bidi-override', direction: 'rtl' }}>OCTSOC</span>
         </div>
         <div className="absolute top-1 -right-[14px] text-[12px] sm:text-[14px] font-bold text-brand-primary font-sans">
           ®
