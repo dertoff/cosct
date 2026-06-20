@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-const CTA_URL = "https://giftclick.org/aff_c?offer_id=4258&aff_id=158143";
+const CTA_URL = "https://giftclick.org/aff_c?offer_id=1323&aff_id=158143";
 
 const BrandLogo = () => (
   <div className="flex flex-col items-center justify-center select-none py-2 shrink-0">
@@ -102,20 +102,31 @@ export default function App() {
         {/* Headline Section */}
         <section className="text-center px-2">
           <h1 className="text-[36px] leading-[1.1] font-black text-brand-primary tracking-tight uppercase">
-            Get up to a <em className="not-italic text-black">$500</em> <br /> Discount Code
+            Get up to a <em className="not-italic text-black">$750</em> <br /> Discount Code
           </h1>
         </section>
 
         {/* Minimal Steps Section */}
         <section className="w-full space-y-4 my-2">
-          {steps.map((step) => (
-            <article key={step.id} className="flex items-center gap-5 bg-brand-soft border border-black/5 rounded-2xl p-5 shadow-sm">
-              <div className="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center shrink-0">
-                <span className="text-[13px] font-black text-white">0{step.id}</span>
-              </div>
-              <h2 className="font-extrabold text-[18px] text-black uppercase tracking-tight m-0">{step.title}</h2>
-            </article>
-          ))}
+          {steps.map((step) => {
+            const isClickable = step.id === "1";
+            const Wrapper = isClickable ? 'a' : 'article';
+            const props = isClickable ? { href: CTA_URL, className: "flex items-center gap-5 bg-brand-soft border border-black/5 rounded-2xl p-5 shadow-sm active:scale-[0.98] transition-all hover:-translate-y-0.5 cursor-pointer block no-underline" } : { className: "flex items-center gap-5 bg-brand-soft border border-black/5 rounded-2xl p-5 shadow-sm" };
+            
+            // To maintain flex layout specifically
+            if (isClickable) {
+              props.className = "flex items-center gap-5 bg-brand-soft border border-black/5 rounded-2xl p-5 shadow-sm active:scale-[0.98] transition-all hover:bg-brand-soft/80 cursor-pointer text-current no-underline hover:-translate-y-0.5";
+            }
+
+            return (
+              <Wrapper key={step.id} {...props as any}>
+                <div className="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center shrink-0">
+                  <span className="text-[13px] font-black text-white">0{step.id}</span>
+                </div>
+                <h2 className="font-extrabold text-[18px] text-black uppercase tracking-tight m-0">{step.title}</h2>
+              </Wrapper>
+            );
+          })}
         </section>
 
         {/* Primary CTA Button */}
