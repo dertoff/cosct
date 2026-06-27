@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
-const CTA_URL = "https://giftclick.org/aff_c?offer_id=1323&aff_id=158143";
+const CTA_URL = "https://linkthem.net/aff_c?offer_id=4171&aff_id=158143";
 
 const BrandLogo = () => (
   <div className="flex flex-col items-center justify-center select-none py-2 shrink-0">
